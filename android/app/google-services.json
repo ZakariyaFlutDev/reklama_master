@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "346054753864",
+    "project_id": "reklama-master-2de84",
+    "storage_bucket": "reklama-master-2de84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346054753864:android:a21832880f6de90b99a27d",
+        "android_client_info": {
+          "package_name": "com.example.reklama_master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346054753864-q3umc2hb1lddoct6k8c9bktf2f4sgan2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIGX2uNKRfYmRsxEQkgBq9wkqOlpaKY7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346054753864-q3umc2hb1lddoct6k8c9bktf2f4sgan2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

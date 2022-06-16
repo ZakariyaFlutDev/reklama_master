@@ -11,6 +11,7 @@ import '../Widgets/searchBox.dart';
 import '../Models/item.dart';
 
 double? width;
+double? height;
 
 class StoreHome extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class _StoreHomeState extends State<StoreHome> {
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
           body: CustomScrollView(
@@ -69,14 +71,14 @@ Widget sourceInfo(ItemModel model, BuildContext context,
     child: Padding(
       padding: EdgeInsets.all(6.0),
       child: Container(
-        height: 160.0,
+        height: height!*0.25,
         width: width,
         child: Row(
           children: [
             Image.network(
               model.thumbnailUrl.toString(),
-              width: 140.0,
-              height: 140.0,
+              width: width! * 0.35,
+              height: height! * 0.2,
               fit: BoxFit.cover,
             ),
             SizedBox(
@@ -147,9 +149,6 @@ Widget sourceInfo(ItemModel model, BuildContext context,
                       ],
                     ),
 
-                    // Flexible(
-                    //   child: Container(),
-                    // ),
 
                     //to implement the cart item remove//add feature
                     Align(
@@ -180,6 +179,7 @@ Widget sourceInfo(ItemModel model, BuildContext context,
                     Divider(
                       height: 5.0,
                       color: Colors.pink,
+                      thickness: 2,
                     )
                   ],
                 ),

@@ -50,10 +50,13 @@ class _ProductPageState extends State<ProductPage> {
                   Stack(
                     children: [
                       Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         child: Center(
                           child: Image.network(widget.itemModel.thumbnailUrl
                               .toString(), fit: BoxFit.cover, width: double
-                              .infinity,),
+                              .infinity, height: MediaQuery.of(context).size.width,),
                         ),
                       ),
                       Container(
@@ -65,27 +68,89 @@ class _ProductPageState extends State<ProductPage> {
                   Container(
                     padding: EdgeInsets.all(20.0),
                     child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
                         children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
 
-                          Text(widget.itemModel.title.toString(),
-                              style: boldTextStyle),
+                              Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text("Nomi : ",
+                                      style: boldTextStyle),
+                                ),
+                              ),
 
-                          SizedBox(height: 10.0,),
+                              SizedBox(height: 10.0,),
 
-                          Text(widget.itemModel.longDescription.toString(),),
+                              Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text("Tavsifi : "),
+                                ),
+                              ),
 
-                          SizedBox(height: 10.0,),
+                              SizedBox(height: 10.0,),
 
-                          Text("\$" + widget.itemModel.price.toString(),
-                              style: boldTextStyle),
+                              Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text("Narxi : ",
+                                      style: boldTextStyle),
+                                ),
+                              ),
 
-                         
-                          SizedBox(height: 10.0,),
+
+                              SizedBox(height: 10.0,),
+
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                              Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(widget.itemModel.title.toString(),
+                                    style: boldTextStyle,
+                                    maxLines: 4,
+                                    overflow: TextOverflow.ellipsis,
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.justify,),
+                                )
+                              ),
+
+                              SizedBox(height: 10.0,),
+
+                              Container(
+                                height: 50,
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                child: Center(
+                                  child: Text(widget.itemModel.longDescription.toString(), textAlign: TextAlign.start,),
+                                ),
+                              ),
+
+
+                              SizedBox(height: 10.0,),
+
+                              Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(widget.itemModel.price.toString() + " so'm",
+                                      style: boldTextStyle),
+                                ),
+                              ),
+
+
+                              SizedBox(height: 10.0,),
+
+                            ],
+                          ),
 
                         ],
-                      ),
+                      )
 
                     ),
                   ),

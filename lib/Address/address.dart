@@ -43,7 +43,7 @@ class _AddressState extends State<Address> {
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Manzilni tanalang",
+                  "Manzilni tanlang",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

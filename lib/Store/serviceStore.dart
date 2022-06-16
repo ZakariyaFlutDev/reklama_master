@@ -75,7 +75,7 @@ class _ServiceStoreState extends State<ServiceStore> {
                           top: 3.0,
                           bottom: 4.0,
                           left: 6.0,
-                          child: Consumer<CartItemCounter>(
+                          child: Consumer<CartItemCounter?>(
                             builder: (context, counter, _) {
                               int cnt = (EcommerceApp.sharedPreferences!.getStringList(EcommerceApp.userCartList)!.length-1) + (EcommerceApp.sharedPreferences!.getStringList(EcommerceApp.userServiceList)!.length-1);
                               return Text(

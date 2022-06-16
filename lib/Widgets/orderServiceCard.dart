@@ -62,15 +62,15 @@ Widget sourceOrderServiceInfo(ServiceModel model, BuildContext context,
 
   return  Container(
     color: Colors.grey.shade100,
-    height: 170.0,
+    height: MediaQuery.of(context).size.height * 0.2,
     width: width,
     child: Row(
       children: [
         SizedBox(width: 5,),
         Image.network(
           model.thumbnailUrl.toString(),
+          width: MediaQuery.of(context).size.width * 0.25,
           fit: BoxFit.cover,
-          width: 140.0,
         ),
         SizedBox(
           width: 10.0,

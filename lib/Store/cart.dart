@@ -12,6 +12,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:reklama_master/Store/storehome.dart';
 import 'package:provider/provider.dart';
 import 'package:reklama_master/Widgets/myDrawer.dart';
+import 'dart:io' show Platform;
 
 class CartPage extends StatefulWidget {
   @override
@@ -50,7 +51,7 @@ class _CartPageState extends State<CartPage> {
             Navigator.push(context, route);
           }
         },
-        label: Text("Check Out"),
+        label: Text("Keyingi"),
         backgroundColor: Colors.pinkAccent,
         icon: Icon(Icons.navigate_next),
       ),
@@ -190,27 +191,31 @@ class _CartPageState extends State<CartPage> {
                 )
               ],
             ),
-            padding: EdgeInsets.only(bottom: 70),
+
+            padding: Platform.isIOS ? EdgeInsets.only(bottom: 100): EdgeInsets.only(bottom: 70),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                margin: EdgeInsets.all(15.0),
-                height: 50,
-                width: 220,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.pink.shade400),
-                child: Center(
-                  child: Text(
-                    "Summa : $totalAmount so'm",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+          Container(
+            padding: Platform.isIOS ? EdgeInsets.only(bottom: 35): EdgeInsets.only(bottom: 0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(15.0),
+                  height: 50,
+                  width: 220,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.pink.shade400),
+                  child: Center(
+                    child: Text(
+                      "Summa : $totalAmount so'm",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -253,62 +258,75 @@ class _CartPageState extends State<CartPage> {
               SizedBox(
                 height: 8.0,
               ),
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Mahsulot nomi : ",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.left,
-                      ),
-                      Text(
-                        "Mahsulot tavsifi : ",
-                        style: TextStyle(
-                          fontSize: 15,
+              Container(
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Mahsulot nomi : ",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.left,
                         ),
-                        textAlign: TextAlign.left,
-                      ),
-                      Text(
-                        "Mahsulot narxi : ",
-                        style: TextStyle(
-                          fontSize: 15,
+                        Text(
+                          "Mahsulot tavsifi : ",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        model.title.toString(),
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.left,
-                      ),
-                      Text(
-                        model.shortInfo.toString(),
-                        style: TextStyle(
-                          fontSize: 15,
+                        Text(
+                          "Mahsulot narxi : ",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
-                        textAlign: TextAlign.left,
-                      ),
-                      Text(
-                        "${model.price.toString()} so'm",
-                        style: TextStyle(
-                          fontSize: 15,
+                      ],
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: width! * 0.5,
+                          child: Text(
+                            model.title.toString(),
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.left,
+                          ),
                         ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ],
-                  )
-                ],
+                        Container(
+                          width: width! * 0.5,
+                          child:Text(
+                            model.shortInfo.toString(),
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                        Container(
+                          width: width! * 0.5,
+                          child: Text(
+                            "${model.price.toString()} so'm",
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+
+
+                      ],
+                    )
+                  ],
+                ),
               ),
               Align(
                 alignment: Alignment.centerRight,

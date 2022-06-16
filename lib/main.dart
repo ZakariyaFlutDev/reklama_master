@@ -98,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
             SizedBox(height: 20.0,),
             Text("Reklama Master", style: TextStyle(color: Colors.white, fontSize: 24),),
             SizedBox(height: 10.0,),
-            Text("reklama mahsulotlari sotish va tayyorlash xizmati", style: TextStyle(color: Colors.white, fontSize: 18),)
+            Text("reklama mahsulotlari sotish va tayyorlash xizmati", style: TextStyle(color: Colors.white, fontSize: 18), textAlign: TextAlign.center,)
           ],
         ),
       )

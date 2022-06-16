@@ -92,7 +92,7 @@ class _RegisterState extends State<Register> {
                 _uploadAndSaveImage();
               },
               child: Text(
-                "Sign Up",
+                "Ro'yxatdan o'tish",
                 style: TextStyle(color: Colors.white),
               ),
             ),

@@ -68,7 +68,7 @@ Widget sourceOrderInfo(ItemModel model, BuildContext context,
         SizedBox(width: 5,),
         Image.network(
           model.thumbnailUrl.toString(),
-          width: 140,
+          width: MediaQuery.of(context).size.width * 0.33,
           fit: BoxFit.cover,
         ),
         SizedBox(
@@ -125,7 +125,7 @@ Widget sourceOrderInfo(ItemModel model, BuildContext context,
                         child: Row(
                           children: [
                             Text(
-                              r"umumiy narx: ",
+                              r"narxi: ",
                               style: TextStyle(
                                   fontSize: 14.0, color: Colors.grey),
                             ),
